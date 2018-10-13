@@ -1,7 +1,6 @@
 package com.mytaxi.service.car;
 
 import com.mytaxi.dataaccessobject.CarRepository;
-import com.mytaxi.dataaccessobject.DriverRepository;
 import com.mytaxi.domainobject.CarDO;
 import com.mytaxi.domainobject.ManufacturerDO;
 import com.mytaxi.exception.ConstraintsViolationException;
@@ -24,15 +23,12 @@ public class DefaultCarService implements CarService
 
     private static final Logger LOG = LoggerFactory.getLogger(DefaultCarService.class);
 
-    private final DriverRepository driverRepository;
-
     private final CarRepository carRepository;
 
 
     @Autowired
-    public DefaultCarService(final DriverRepository driverRepository, final CarRepository carRepository)
+    public DefaultCarService(final CarRepository carRepository)
     {
-        this.driverRepository = driverRepository;
         this.carRepository = carRepository;
     }
 

@@ -154,7 +154,7 @@ public class DefaultDriverService implements DriverService
             }
 
             if (carDO.getDriver() != null && carDO.getDriver().getId() != driverId) {
-                throw new CarAlreadyInUseException("car is already assigned to another driver" + carId);
+                throw new CarAlreadyInUseException("car is already in use by another driver" + carId);
             }
 
             //save car with driver ....
@@ -165,7 +165,7 @@ public class DefaultDriverService implements DriverService
             driverDO.setCar(carDO);
             driverRepository.save(driverDO);
 
-            LOG.debug("driver has selected car : {}", driverDO.getCar().getId());
+            LOG.debug("driver has selected car : {}", driverDO.getCar());
 
         } else if (Action.DESELECT == action) {
 

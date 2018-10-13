@@ -69,6 +69,16 @@ public class CarDO
     public CarDO(
         Long id,
         @NotNull(message = "License plate cannot be null!") String licensePlate,
+        @NotNull(message = "Manufacturer cannot be null") ManufacturerDO manufacturer)
+    {
+        this.id = id;
+        this.licensePlate = licensePlate;
+        this.manufacturer = manufacturer;
+    }
+
+    public CarDO(
+        Long id,
+        @NotNull(message = "License plate cannot be null!") String licensePlate,
         @NotNull(message = "Seat count cannot be null!") Integer seatCount,
         Boolean convertible,
         Float rating,
